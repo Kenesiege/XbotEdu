@@ -52,16 +52,31 @@ public class DriveSubsystem {
 		frontRight.set(rightPower);
 		rearRight.set(rightPower);
 		
+	}
+	
+	public void arcadeDrive(double y, double x){
+		
+		double leftPower = y + x;
+		double rightPower = y - x;
+				
+		
+		tankDrive(leftPower, rightPower);
+		
+		
+		
 		
 		
 		
 	}
+	
 	public void togglePrecisionMode(){
 		if(precisionMode){
 			precisionMode = false;
 	    } else{
 	    	precisionMode = true;
 	    }
+		
+		
 		
 		
 	}
