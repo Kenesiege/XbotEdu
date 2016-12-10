@@ -31,7 +31,7 @@ public class TankDriveTest extends BaseDriveTest {
 		left.setY(-1.0);
 		right.setY(1.0);
 		command.execute();
-		assertDrive(-1.0,1.0, "Expect Motors are all forward when both joysticks are completely forward");
+		assertDrive(-1.0,1.0, "Expect Motors turn when both joysticks are turned");
 		
 	}
 }
