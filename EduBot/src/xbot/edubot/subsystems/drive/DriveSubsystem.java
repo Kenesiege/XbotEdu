@@ -22,6 +22,10 @@ public class DriveSubsystem {
 	XSpeedController frontRight;
 	XSpeedController rearLeft;
 	XSpeedController rearRight;
+	
+	boolean precisionMode = false;
+	
+	
 		
 	@Inject
 	public DriveSubsystem(WPIFactory factory) {
@@ -39,9 +43,26 @@ public class DriveSubsystem {
 		// You'll need to take these power values and assign them to all of the motors. As
 		// an example, here is some code that has the frontLeft motor to spin according to
 		// the value of leftPower:
+		if(precisionMode){
+			leftPower = leftPower / 2.0;
+			rightPower = rightPower / 2.0;
+		}
 		frontLeft.set(leftPower);
 		rearLeft.set(leftPower);
 		frontRight.set(rightPower);
 		rearRight.set(rightPower);
+		
+		
+		
+		
+	}
+	public void togglePrecisionMode(){
+		if(precisionMode){
+			precisionMode = false;
+	    } else{
+	    	precisionMode = true;
+	    }
+		
+		
 	}
 }
